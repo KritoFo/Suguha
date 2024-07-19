@@ -1,0 +1,354 @@
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    height: 100vh;
+    font-display: flex;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+/* Estilos del header */
+
+header {
+    background-color: #333;
+    color: #f8f8f8;
+    padding: 10px 0px;
+}
+
+.logo {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+
+.search-bar {
+    flex: 2;
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.search-bar input,
+.search-bar button {
+    margin-right: 20px;
+    border-radius: 5px;
+    width: 300px; /* Ancho deseado */
+    height: 30px; /* Alto deseado */
+}
+
+.user-options, .cart-profile {
+    flex: 1;
+    margin-left: 10px;
+}
+
+#Login,
+#Registro,
+#Car,
+#Perfil,
+#Buscar {
+    background: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    margin: 5px;
+}
+
+/*Estilos del nav*/
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centra los elementos de la lista */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block; /* Convierte los enlaces en bloques para que ocupen todo el espacio disponible */
+    padding: 14px 50px; /* Espaciado interno */
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Estilos del main y columnas */
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+    max-width: 1200px; /* Ajuste de ancho máximo */
+    margin: 0 auto; /* Centrando el main */
+}
+
+.columna {
+    flex: 1;
+    padding: 45px 20px;
+}
+
+.columna1, .columna3 {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Permite que la columna ocupe el mismo espacio */
+    max-width: 25%; /* Ajuste de ancho máximo para evitar desplazamiento */
+}
+
+.columna2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    flex: 2; /* Permite que la columna ocupe el doble de espacio */
+    max-width: 40%; /* Ajuste de ancho máximo para evitar desplazamiento */
+}
+
+.columna2 .cont {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.video {
+    margin-bottom: 20px;
+}
+
+#poster {
+    width: 350px;
+    margin-top: 30px;
+}
+
+.opciones-producto {
+    margin-bottom: 20px;
+}
+
+.opciones-producto ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.opciones-producto ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.productos-exhibicion {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.producto {
+    width: 30%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.producto img {
+    width: 100%;
+}
+
+/* Estilos de la galería columna 2 */
+
+.galery {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 250px;
+    width: 230px;
+    animation: rotation 20s linear infinite;
+    transition: 0.3s ease;
+    margin: 0 auto; /* Centra el contenedor automáticamente */
+}
+
+.galery:has(.items:hover) {
+    animation-play-state: paused;
+}
+
+.items {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.shadow {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: transparent;
+    background: #0000;
+    opacity: 0;
+    transition: 0.5s ease;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
+.items:hover > .shadow {
+    opacity: 0.5;
+    color: #ffffff;
+}
+
+img {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.10s ease;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+
+.items:nth-child(1) {
+    transform: translateZ(230px);
+}
+
+.items:nth-child(2) {
+    transform: rotateY(60deg) translateZ(230px);
+}
+
+.items:nth-child(3) {
+    transform: rotateY(120deg) translateZ(230px);
+}
+
+.items:nth-child(4) {
+    transform: rotateY(180deg) translateZ(230px);
+}
+
+.items:nth-child(5) {
+    transform: rotateY(240deg) translateZ(230px);
+}
+
+.items:nth-child(6) {
+    transform: rotateY(300deg) translateZ(230px);
+}
+
+@keyframes rotation {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+h1 {
+    text-align: center;
+    padding: 0;
+}
+
+p {
+    font-size: 15px;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    text-align: center;
+}
+
+/* Estilos del footer */
+
+footer {
+    background-color: #938d8d;
+    padding: 20px 0;
+}
+
+.tienda-fisica, .informacion-contacto {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.informacion-contacto ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.informacion-contacto ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.informacion-contacto ul li a {
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+.informacion-contacto ul li a:hover {
+    color: #007bff;
+}
+
+/* Estilos del Formulario */
+
+.registro-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#Registrarse, #Iniciar {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.social-login {
+    text-align: center;
+}
+
+.social-login button {
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.social-login button i {
+    margin-right: 5px;
+}
