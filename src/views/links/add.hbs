@@ -1,26 +1,7 @@
     <main>
-        <div class="columna columna1">
-            <div class="temas-tendencia">
-                <h2>Temas en Tendencia</h2>
-                <ol>
-                    <li>Kimetzu no Yaiba</li>
-                    <li>Día de la madre</li>
-                    <li>Día del niño</li>
-                    <li>Marvel</li>
-                    <li>Spy Family</li>
-                    <li>Naruto</li>
-                    <li>Sailor Moon</li>
-                    <li>One Piece</li>
-                    <li>Dune</li>
-                </ul>
-            </div>
-            <div class="productos">
-                <a href="#">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_905720-MEC46198157349_052021-O.webp" width="300px">
-                </a>
-            </div>
-        </div>
 
+        {{> tendencias }}
+        
         <div class="columna columna2">
             <div class="registro-form">
                 <h2>Registro de Clientes</h2>
@@ -49,24 +30,22 @@
                         <label for="telefono">Teléfono:</label>
                         <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9\+\s]+" placeholder="Ingrese su número de teléfono" title="Solo se caracteres numericos y el simbolo +." maxlength="15" required>
                     </div>
-                    <button class="Registro" id="Registrarse" type="submit">Registrarse</button>
+                    <div class="d-flex justify-content-center align-items-center margin-top-20">
+                        <button class="Registro" id="Registrarse" type="submit">Registrarse</button>
+                    </div>
                 </form>
-                <div class="alternative-login">
+                <div class="margin-top-20">
                     <p>or continue with</p>
                     <div class="social-login">
                         <button id="google-login"><i class="fab fa-google"></i> Google</button>
                         <button id="facebook-login"><i class="fab fa-facebook"></i> Facebook</button>
                     </div>
                     <p>¿Ya estás registrado? - <a href="/login.html">Inicia Sesión</a></p>
-                    <p>By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                    <p>Haciendo click en Registrarse, usted acepta nuestros <a href="#">Terminos de Servicio</a> y <a href="#">Politica de Privacidad</a>.</p>
                 </div>
             </div>
         </div>
-                
-        <div class="columna columna3">
-            <div class="video">
-                <iframe width="350" height="215" src="https://www.youtube.com/embed/eQf4fqNhhPE?si=mJIPOtNZHUJqpmOW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <img id="poster" src=https://static.cinepolis.com/resources/mx/movies/posters/414x603/45358-564455-20240202014940.jpg>
-            </div>
-        </div>
+
+        {{> publicidad }}
+
     </main>

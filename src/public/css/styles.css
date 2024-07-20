@@ -352,3 +352,15 @@ button[type="submit"]:hover {
 .social-login button i {
     margin-right: 5px;
 }
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-r {
+    margin-right: 10px;
+}
+
+.actions {
+    width: 150px;
+}

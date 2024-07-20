@@ -1,0 +1,37 @@
+<div class="container p-4">
+    <div class="row">
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Identificación</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    {{#each links}}
+                    <tbody>
+                        <tr>
+                            <th>{{id}}</th>
+                            <th>{{nombre}}</th>
+                            <th>{{identificacion}}</th>
+                            <th>{{email}}</th>
+                            <th>{{password}}</th>
+                            <th>{{direccion}}</th>
+                            <th>{{telefono}}</th>
+                            <th class="d-flex justify-content-center gap-2 actions">
+                                <a href="/links/delete/{{id}}" class="btn btn-danger btn-sm">Eliminar</a>
+                                <a href="/links/edit/{{id}}" class="btn btn-secondary btn-sm">Editar</a>
+                            </th>
+                        </tr>
+                    </tbody>
+                    {{/each}}
+                </table>
+            </div>
+    </div>
+</div>
