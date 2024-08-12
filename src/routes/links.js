@@ -18,6 +18,7 @@ router.post('/add', async (req, res) => {
         telefono
     };
     await pool.query('INSERT INTO clientes set ?', [newCliente]);
+    req.flash('success', 'Usuario creado correctamente');
     res.redirect('/links');
 });
 
@@ -28,21 +29,22 @@ router.get('/', async (req, res) => {
 });
 
     //Eliminar Cliente Tabla
-router.get('/delete/:id', async (req, res) => {
-    const { id } = req.params;
-    await pool.query('DELETE FROM clientes WHERE ID = ?', [id]);
+router.get('/delete/:id_clientes', async (req, res) => {
+    const { id_clientes } = req.params;
+    await pool.query('DELETE FROM clientes WHERE id_clientes = ?', [id_clientes]);
+    req.flash('success', 'Usuario elimminado correctamente')
     res.redirect('/links');
 });
 
     //Editar Cliente Tabla
-router.get('/edit/:id', async (req,res) => {
-    const { id } = req.params;
-    const readCliente = await pool.query('SELECT * FROM clientes WHERE id = ?', [id]);
+router.get('/edit/:id_clientes', async (req,res) => {
+    const { id_clientes } = req.params;
+    const readCliente = await pool.query('SELECT * FROM clientes WHERE id_clientes = ?', [id_clientes]);
     res.render('links/edit', { readCliente: readCliente[0] });
 });
 
-router.post('/edit/:id', async (req, res) => {
-    const { id } = req.params;
+router.post('/edit/:id_clientes', async (req, res) => {
+    const { id_clientes } = req.params;
     const { nombre, identificacion, email, password, direccion, telefono } = req.body;
     const newCliente = {
         nombre,
@@ -52,14 +54,15 @@ router.post('/edit/:id', async (req, res) => {
         direccion,
         telefono
     };
-    await pool.query('UPDATE clientes set ? WHERE id = ?', [newCliente, id]);
-    res.send('Vista Home')
+    await pool.query('UPDATE clientes set ? WHERE id_clientes = ?', [newCliente, id_clientes]);
+    req.flash('success', 'Usuario actualizado correctamente')
+    res.redirect(id_clientes)
 });
 
 //Eliminar Cliente Form
-router.get('/delete1/:id', async (req, res) => {
-    const { id } = req.params;
-    /*await pool.query('DELETE FROM clientes WHERE ID = ?', [id]);*/
+router.get('/delete1/:id_clientes', async (req, res) => {
+    const { id_clientes } = req.params;
+    /*await pool.query('DELETE FROM clientes WHERE id_clientes = ?', [id_clientes]);*/
     res.render('links/add')
 });
 

@@ -17,7 +17,7 @@ pool.getConnection((error, connection) => {
         }
     }
     
-    if (connection) connection.removeAllListeners();
+    if (connection) connection.release();
     console.log('BASE DE DATOS CONECTADA');
     return;
 });

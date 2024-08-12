@@ -5,7 +5,7 @@
                 <div class="columna columna2">
                     <div class="registro-form">
                         <h2>Perfil de Cliente</h2>
-                        <form action="/links/edit/{{readCliente.id}}" id="registration-form" method="POST">
+                        <form action="/links/edit/{{readCliente.id_clientes}}" id="registration-form" method="POST">
                             <div class="form-group">
                                 <label for="nombre">Nombre:</label>
                                 <input value="{{readCliente.nombre}}" type="text" class="form-control" id="nombre" name="nombre" pattern="[A-Za-z\s]+" placeholder="Ingrese su nombre" title="Solo se permiten caracteres alfabeticos." maxlength="50" required autofocus>
@@ -31,14 +31,14 @@
                                 <input value="{{readCliente.telefono}}" type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9\+\s]+" placeholder="Ingrese su número de teléfono" title="Solo se caracteres numericos y el simbolo +." maxlength="15" required>
                             </div>
                             <div class="d-flex justify-content-center align-items-center margin-top-20">
-                                <button class="btn btn-secondary" type="submit">Guardar</button>
+                                <button class="btn btn-secondary" id="Guardar" type="submit">Guardar</button>
                             </div>
                         </form>
                         <div class="alternative-login margin-top-20">
                             <p>Haciendo click en Guardar, usted acepta nuestros <a href="#">Terminos de Servicio</a> y <a href="#">Politica de Privacidad</a>.</p>
                         </div>
                         <div class="d-flex justify-content-center align-items-center margin-top-20">
-                            <a href="/links/delete1/{{readCliente.id}}" class="btn btn-danger margin-r">Eliminar Perfil</a>
+                            <a href="/links/delete1/{{readCliente.id_clientes}}" class="btn btn-danger margin-r">Eliminar Perfil</a>
                         </div>
                     </div>
                 </div>

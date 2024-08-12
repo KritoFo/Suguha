@@ -8,7 +8,6 @@
                             <th>Nombre</th>
                             <th>Identificación</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th>Direccion</th>
                             <th>Telefono</th>
                             <th>Actions</th>
@@ -16,17 +15,16 @@
                     </thead>
                     {{#each links}}
                     <tbody>
-                        <tr>
-                            <th>{{id}}</th>
+                        <tr class="w-auto">
+                            <th>{{id_clientes}}</th>
                             <th>{{nombre}}</th>
                             <th>{{identificacion}}</th>
                             <th>{{email}}</th>
-                            <th>{{password}}</th>
                             <th>{{direccion}}</th>
                             <th>{{telefono}}</th>
                             <th class="d-flex justify-content-center gap-2 actions">
-                                <a href="/links/delete/{{id}}" class="btn btn-danger btn-sm">Eliminar</a>
-                                <a href="/links/edit/{{id}}" class="btn btn-secondary btn-sm">Editar</a>
+                                <a href="/links/delete/{{id_clientes}}" class="btn btn-danger btn-sm">Eliminar</a>
+                                <a href="/links/edit/{{id_clientes}}" class="btn btn-secondary btn-sm">Editar</a>
                             </th>
                         </tr>
                     </tbody>

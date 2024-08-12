@@ -1,11 +1,11 @@
-    <main>
+<main>
 
         {{> tendencias }}
         
         <div class="columna columna2">
             <div class="registro-form">
                 <h2>Registro de Clientes</h2>
-                <form action="/links/add" id="registration-form" method="POST">
+                <form action="/singup" id="registration-form" method="POST">
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" pattern="[A-Za-z\s]+" placeholder="Ingrese su nombre" title="Solo se permiten caracteres alfabeticos." maxlength="50" required autofocus>
