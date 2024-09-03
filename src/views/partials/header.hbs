@@ -1,20 +1,28 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Personalizados Suguha</h1>
+                <h1><a class="enlace" href="home">Personalizados Suguha</a></h1>
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="  Buscar...">
                 <button id="Buscar" type="submit">Buscar</button>
             </div>
-            <div class="user-options">
-                <button id="Login">Iniciar sesión</button>
-                <button id="Registro">Registrarse</button></a>
-            </div>
             <div class="cart-profile">
                 <button id="Car">Carrito</button>
-                <button id="Perfil">Perfil</button>
             </div>
+
+            {{#if user}}
+            <div>
+            <a href="/profile" class="btn btn-secondary btn-sm">Perfil</a>
+            <a href="/logout" class="btn btn-secondary btn-sm">Cerrar Sesion</a>
+            </div>
+            {{else}}
+            <div class="user-options">
+                <a href="/signin" class="btn btn-secondary btn-sm">Iniciar sesión</a>
+                <a href="/singup" class="btn btn-secondary btn-sm">Registrarse</a>
+            </div>
+            {{/if}}
+
         </div>
     </header>
 

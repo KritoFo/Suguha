@@ -42,10 +42,12 @@ app.use(passport.session());
 app.use((req, res, next) => {
     app.locals.success = req.flash('success');
     app.locals.message = req.flash('message');
+    app.locals.user = req.user;
     next();
 });
 
 // Rutas
+app.use(require('./routes/home.js'));
 app.use(require('./routes/index.js'));
 app.use(require('./routes/authentication.js'));
 app.use('/links', require('./routes/links.js'));

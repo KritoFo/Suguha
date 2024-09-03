@@ -11,10 +11,9 @@ passport.use('local.signin', new LocalStrategy({
     const rows = await pool.query('SELECT * FROM clientes WHERE email = ?', [username]);
     if (rows.length > 0) {
         const user = rows[0];
-        const name = user.nombre;
         const validPassword = await helpers.matchPassword(password, user.password);
         if (validPassword) {
-            done(null, user, req.flash('success', '¡Hola ' + name + '!, disfruta navegando en nuestra web.'));
+            done(null, user, req.flash('success', '¡Hola, disfruta navegando en nuestra web.'));
         } else {
             done(null, false, req.flash('message', 'Contraseña Incorrecta'));
         }
@@ -41,11 +40,12 @@ passport.use('local.singup', new LocalStrategy({
     newUser.password = await helpers.encryptPassword(password);
     
     const result = await pool.query('INSERT INTO clientes SET ?', [newUser]);
-    newUser.id = result.insertId;
+    newUser.id_clientes = result.insertId;
     return done(null, newUser);
 }));
 
 passport.serializeUser((user, done) => {
+    console.log(user);
     done(null, user.id_clientes);
 });
 

@@ -51,17 +51,9 @@ header {
     margin-left: 10px;
 }
 
-#Login,
-#Registro,
-#Car,
-#Perfil,
-#Buscar {
-    background: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 15px;
-    margin: 5px;
+.enlace {
+    color: white;
+    text-decoration: none;
 }
 
 /*Estilos del nav*/
