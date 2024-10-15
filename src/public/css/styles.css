@@ -157,6 +157,7 @@ main {
 
 .producto img {
     width: 100%;
+    transition: all .7s;
 }
 
 /* Estilos de la galería columna 2 */
@@ -205,7 +206,7 @@ img {
     height: 60%;
     width: 100%;
     object-fit: cover;
-    transition: 0.10s ease;
+    transition: all 0.7s;
 }
 
 img:hover {
@@ -253,7 +254,7 @@ h1 {
 p {
     font-size: 15px;
     align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
 }
 
@@ -348,4 +349,183 @@ footer {
 
 .actions {
     width: 150px;
+}
+
+/* Seccion Productos */
+
+.icon-car {
+    width: 40px;
+    height: 40px;
+    stroke: #000;
+}
+
+.icon-car:hover {
+    cursor: pointer;
+}
+
+.car-profile {
+    position: relative;
+}
+
+.count-prd {
+    position: absolute;
+    top: 55%;
+    right: 0;
+
+    background-color: #000;
+    color: #ffffff;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#count-prd {
+    font-size: 12px;
+}
+
+.container-car-prd {
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    background-color: #ffffff;
+    color: #000;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+}
+
+.car-prd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.info-car-prd {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.tittle-prd-car{
+    font-size: 20px;
+}
+
+.precio-prd-car {
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.cantidad-prd-car {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.car-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.car-total h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hidden-car {
+    display: none;
+}
+
+.icon-close {
+    width: 25px;
+    height: 25px;
+}
+
+.icon-close:hover {
+    stroke: red;
+    cursor: pointer;
+}
+
+.img-prd {
+    width: 300px;
+}
+
+.main-prd {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 0 40 px 0;
+}
+
+.tittle-prd {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-items-prd {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.item {
+    border-radius: 10px;
+}
+
+.item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.info-product {
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.info-product button {
+    border: none;background: none;
+    background-color: #000;
+    color: #ffffff;
+    padding: 15px 10px;
+    cursor: pointer;
+
+}
+
+.item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.item:hover img{
+    transform: scale(1.2);
+}
+
+.item figure {
+    overflow: hidden;
 }

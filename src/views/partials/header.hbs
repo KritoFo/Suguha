@@ -7,9 +7,6 @@
                 <input type="text" placeholder="  Buscar...">
                 <button id="Buscar" type="submit">Buscar</button>
             </div>
-            <div class="cart-profile">
-                <button id="Car">Carrito</button>
-            </div>
 
             {{#if user}}
             <div>
@@ -23,6 +20,31 @@
             </div>
             {{/if}}
 
+            <div class="car-profile">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-car">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                </svg>
+                <div class="count-prd">
+                    <span id="contador-prd">0</span>
+                </div>
+                <div class="container-car-prd hidden-car">
+                    <div class="car-prd">
+                        <div class="info-car-prd">
+                            <span class="cantidad-prd-car">1</span>
+                            <p class="titulo-prd-car">Camisa</p>
+                            <span class="precio-prd-car">$20.000</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                    <div class="car-total">
+                        <h3>Total</h3>
+                        <span class="total-pagar">$20.000</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
 
@@ -31,14 +53,15 @@
         <ul>
             <li><a href="#">SOBRE NOSOTROS</a></li>
             <li class="nav-item dropdown">
-                <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="/products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     PRODUCTOS
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                    <li><a class="dropdown-item" href="#">Mugs</a></li>
+                    <li><a class="dropdown-item" href="/products">Camisetas</a></li>
+                    <li><a class="dropdown-item" href="/products">Mugs</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Gorras</a></li>
+                    <li><a class="dropdown-item" href="/products">Cuadernos</a></li>
+                    <li><a class="dropdown-item" href="/products">Padmouse</a></li>
                 </ul>
             </li>
             <li><a href="#">PUBLICIDAD</a></li>
