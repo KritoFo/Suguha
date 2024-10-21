@@ -7,6 +7,9 @@ body {
     font-size: 15px;
     height: 100vh;
     font-display: flex;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .container {
@@ -21,9 +24,15 @@ body {
 /* Estilos del header */
 
 header {
-    background-color: #333;
+    background-color: #000;
     color: #f8f8f8;
     padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.space {
+    margin: 0 20px 0 0;
 }
 
 .logo {
@@ -32,8 +41,12 @@ header {
     text-align: center;
 }
 
+.enlace:hover {
+    color: hwb(233 54% 0%);
+}
+
 .search-bar {
-    flex: 2;
+    flex: 1;
     margin-right: 10px;
     margin-left: 50px;
 }
@@ -42,13 +55,14 @@ header {
 .search-bar button {
     margin-right: 20px;
     border-radius: 5px;
-    width: 300px; /* Ancho deseado */
-    height: 30px; /* Alto deseado */
+    width: 300px;
+    height: 30px;
 }
 
-.user-options, .cart-profile {
+.user-options {
     flex: 1;
     margin-left: 10px;
+    right: 0;
 }
 
 .enlace {
@@ -60,13 +74,14 @@ header {
 
 nav {
     background-color: #333;
+    box-shadow: 0 3px 5px #555;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center; /* Centra los elementos de la lista */
+    text-align: center;
 }
 
 nav ul li {
@@ -74,8 +89,8 @@ nav ul li {
 }
 
 nav ul li a {
-    display: inline-block; /* Convierte los enlaces en bloques para que ocupen todo el espacio disponible */
-    padding: 14px 50px; /* Espaciado interno */
+    display: inline-block;
+    padding: 14px 50px;
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -92,8 +107,8 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 20px 0px;
-    max-width: 1200px; /* Ajuste de ancho máximo */
-    margin: 0 auto; /* Centrando el main */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .columna {
@@ -105,20 +120,20 @@ main {
 .columna3 {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Permite que la columna ocupe el mismo espacio */
-    max-width: 25%; /* Ajuste de ancho máximo para evitar desplazamiento */
+    flex: 1;
+    max-width: 25%;
 }
 
 .columna2 {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido horizontalmente */
-    flex: 2; /* Permite que la columna ocupe el doble de espacio */
-    max-width: 40%; /* Ajuste de ancho máximo para evitar desplazamiento */
+    align-items: center;
+    flex: 2;
+    max-width: 40%;
 }
 
 .columna2 .cont {
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    width: 100%;
 }
 
 .video {
@@ -169,7 +184,7 @@ main {
     width: 230px;
     animation: rotation 20s linear infinite;
     transition: 0.3s ease;
-    margin: 0 auto; /* Centra el contenedor automáticamente */
+    margin: 0 auto;
 }
 
 .galery:has(.items:hover) {
@@ -261,8 +276,11 @@ p {
 /* Estilos del footer */
 
 footer {
-    background-color: #938d8d;
+    margin-top: auto;
+    background-color: #000;
     padding: 20px 0;
+    box-shadow: 0 -3px 5px #555;
+    color: #ffffff;
 }
 
 .tienda-fisica, .informacion-contacto {
@@ -283,7 +301,8 @@ footer {
 
 .informacion-contacto ul li a {
     text-decoration: none;
-    color: #0f0f0f;
+    color: #ffffff
+;
 }
 
 .informacion-contacto ul li a:hover {
@@ -354,16 +373,16 @@ footer {
 /* Seccion Productos */
 
 .icon-car {
-    width: 40px;
-    height: 40px;
-    stroke: #000;
+    width: 50px;
+    height: 50px;
+    stroke: floralwhite;
 }
 
 .icon-car:hover {
     cursor: pointer;
 }
 
-.car-profile {
+.container-icon {
     position: relative;
 }
 
@@ -372,7 +391,7 @@ footer {
     top: 55%;
     right: 0;
 
-    background-color: #000;
+    background-color: red;
     color: #ffffff;
     width: 25px;
     height: 25px;
@@ -383,8 +402,9 @@ footer {
     border-radius: 50%;
 }
 
-#count-prd {
-    font-size: 12px;
+#contador-prd {
+    font-size: 20px;
+
 }
 
 .container-car-prd {
@@ -434,12 +454,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 10px 0;
     gap: 20px;
 }
 
 .car-total h3 {
-    font-size: 20px;
     font-weight: 700;
 }
 
@@ -506,12 +525,12 @@ footer {
 }
 
 .info-product button {
-    border: none;background: none;
+    border: none;
+    background: none;
     background-color: #000;
     color: #ffffff;
     padding: 15px 10px;
     cursor: pointer;
-
 }
 
 .item img {
@@ -528,4 +547,25 @@ footer {
 
 .item figure {
     overflow: hidden;
+}
+
+.vaciar-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.empty-car {
+    border: none;
+    background: none;
+    background-color: #000;
+    color: #ffffff;
+    padding: 3px 12px;
+    cursor: pointer;
+}
+
+.cart-item-img {
+    width: 20;
+    height: 20;
 }
