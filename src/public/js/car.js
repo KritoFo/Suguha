@@ -83,15 +83,17 @@ function renderCart() {
     cart.forEach((product, index) => {
         const productHTML = `
         <div class="cart-item">
-            <img src="img/${product.img}" alt="${product.nombre}" class="cart-item-img">
+            <figure>
+                <img src="img/${product.img}" alt="${product.nombre}" class="cart-item-img">
+            </figure>
             <div class="cart-item-info">
                 <h3>${product.nombre}</h3>
                 <p>Precio: $${product.precio}</p>
-                <div class="cart-item-controls">
-                    <button class="decrease-quantity" data-index="${index}">-</button>
-                    <span class="quantity">${product.cantidad}</span>
-                    <button class="increase-quantity" data-index="${index}">+</button>
-                </div>
+            </div>
+            <div class="cart-item-controls">
+                <button class="decrease-quantity" data-index="${index}">-</button>
+                <span class="quantity">${product.cantidad}</span>
+                <button class="increase-quantity" data-index="${index}">+</button>
             </div>
         </div>
         `;
@@ -140,6 +142,7 @@ function decreaseQuantity(index) {
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCount();
     renderCart();
+    renderTotal();
 };
 
 //Convertir precio de texto a numero
@@ -151,7 +154,7 @@ function priceTextToNumber(priceText) {
 function calculateTotal() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let total = cart.reduce((sum, product) => sum + product.valor * product.cantidad, 0);
-    return total.toLocaleString("es-Co", { minimumFractionDigits: 2, maximumFractionDigits: 2});
+    return total.toLocaleString("es-Co", { minimumFractionDigits: 0, maximumFractionDigits: 0});
 };
 
 //Mostrar el total
